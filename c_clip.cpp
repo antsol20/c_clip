@@ -27,7 +27,7 @@ size_t curl_devnull(char* ptr, size_t size, size_t nmemb, void* userdata) {
 	return size * nmemb;
 }
 
-std::string imap_check(std::string const& username, std::string const& password)
+std::string imap_check(const std::string& username, const std::string& password)
 {
 	CURL* curl;
 	CURLcode res = CURLE_OK;
@@ -56,7 +56,7 @@ std::string imap_check(std::string const& username, std::string const& password)
 	return result;
 }
 
-void clipCheckFile(std::string const& in_file, std::string const& out_file) {
+void clipCheckFile(const std::string& in_file, const std::string& out_file) {
 
 	std::ifstream in(in_file.c_str());
 	std::vector<std::string> vecOfAccounts;
@@ -99,7 +99,7 @@ void clipCheckFile(std::string const& in_file, std::string const& out_file) {
 
 }
 
-void tokenize(std::string const& str, const char delim,std::vector<std::string>& out) {
+void tokenize(const std::string& str, const char delim, std::vector<std::string>& out) {
 	size_t start;
 	size_t end = 0;
 
